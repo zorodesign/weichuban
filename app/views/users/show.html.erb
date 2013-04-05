@@ -5,10 +5,18 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
-        <%= gravatar_for @user, size: 50 %>
-        <%= @user.name %>
-      </h1>
+      <span class="title"><%= gravatar_for @user, size: 50 %></span>
+      <span class="title"><%= @user.name %></span>
+      <span class="title"><%= @user.description %></span>
     </section>
   </aside>
+  <div class="span8">
+    <% if @user.books.any? %>
+      <h3>作品 (<%= @user.books.count %>)</h3>   
+      <ol class="books">
+        <%= render @books %>
+      </ol>
+      <%= will_paginate @books %>
+    <% end %>
+  </div>
 </div>

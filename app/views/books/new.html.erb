@@ -1,0 +1,19 @@
+<% provide(:title, '写一本新书') %>
+<h2>写一本新书</h2>
+
+<div class="row">
+  <div class="span5 offset3">
+    <%= form_for @book, :url => user_books_path(@user) do |f| %>
+      
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :title, "书名" %>
+      <%= f.text_field :title %>
+
+      <%= f.label :summary, "简介" %>
+      <%= f.text_field :summary %>
+
+      <%= f.submit "保存", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

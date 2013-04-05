@@ -1,0 +1,9 @@
+<li>
+  <span class="title"><%= book.title %></span>
+  <span class="title"><%= book.summary %></span>
+  <span class="timestamp">
+    <%= time_ago_in_words(book.created_at) %>前撰写
+    <%= link_to '查看与继续写作', user_book_path(@user, book) %>
+    <%= link_to '编辑书名与简介', edit_user_book_path(@user, book) %>
+  </span>
+</li>
