@@ -1,0 +1,40 @@
+<% provide(:title, '个人设置') %>
+<h2>个人设置</h2>
+
+<div class="row">
+  <div class="span5 offset3">
+    <%= form_for(@user) do |f| %>
+      
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name, "笔名" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email, "邮箱" %>
+      <%= f.text_field :email %>
+      
+      <%= f.label :description, "我的简介" %>
+      <%= f.text_field :description %>
+      
+      <%= f.label :alipay, "支付宝帐户（用于接受捐赠，请放心填写）" %>
+      <%= f.text_field :alipay %>
+      
+      <%= f.label :password, "新密码" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "确认密码" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "保存", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
+
+<h2></h2>
+
+<div class="row">
+  <div class="span5 offset3">
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails">更改头像</a>
+  </div>
+</div>

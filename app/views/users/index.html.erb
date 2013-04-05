@@ -1,0 +1,10 @@
+<% provide(:title, '作家榜') %>
+<h2>作家榜</h2>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<%= will_paginate %>

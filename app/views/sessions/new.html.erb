@@ -1,0 +1,23 @@
+<% provide(:title, '登录') %>
+<h2>登录</h2>
+<% flash.each do |key, value| %>
+ <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+<div class="row">
+  <div class="span5 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :email, "邮箱" %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "密码" %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "登录", class: "btn btn-large btn-success" %>
+    <% end %>
+    
+    <p>还没有帐号? <%= link_to "马上注册", signup_path %></p>
+    
+  </div>
+</div>
